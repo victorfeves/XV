@@ -1,0 +1,418 @@
+#define dotd 200
+#define dashd dotd * 3
+#define noned 0
+#define signal_gap dotd
+#define letter_gap dotd * 3
+#define word_gap dotd * 7
+
+int pin = 13;
+//
+
+
+void setup(){
+  pinMode (13, OUTPUT);
+}
+
+void dot(){
+  digitalWrite(pin, HIGH);
+  delay(dotd);
+  digitalWrite(pin, LOW);
+  delay(signal_gap);
+}
+void dash(){
+  digitalWrite(pin, HIGH);
+  delay(dashd);
+  digitalWrite(pin, LOW);
+  delay(signal_gap);
+}
+
+void a() {
+  dot();
+  dash();
+}
+void b() {
+  dash();
+  dot();
+  dot();
+  dot();
+}
+void c() {
+  dash();
+  dot();
+  dash();
+  dot();
+}
+void d() {
+  dash();
+  dot();
+  dot();
+}
+void e() {
+  dot();
+}
+void f() {
+  dot();
+  dot();
+  dash();
+  dot();
+}
+void g() {
+  dash();
+  dash();
+  dot();
+}
+void h() {
+  dot();
+  dot();
+  dot();
+  dot();
+}
+void i() {
+  dot();
+  dot();
+}
+void j() {
+  dot();
+  dash();
+  dash();
+  dash();
+}
+void k() {
+  dash();
+  dot();
+  dash();
+}
+void l() {
+  dot();
+  dash();
+  dot();
+  dot();
+}
+void m() {
+  dash();
+  dash();
+}
+void n() {
+  dash();
+  dot();
+}
+void o() {
+  dash();
+  dash();
+  dash();
+}
+void p() {
+  dot();
+  dash();
+  dash();
+  dot();
+}
+void q() {
+  dash();
+  dash();
+  dot();
+  dash();
+}
+void r() {
+  dot();
+  dash();
+  dot();
+}
+void s() {
+  dot();
+  dot();
+  dot();
+}
+void t() {
+  dash();
+}
+void u() {
+  dot();
+  dot();
+  dash();
+}
+void v() {
+  dot();
+  dot();
+  dot();
+  dash();
+}
+void w() {
+  dot();
+  dash();
+  dash();
+}
+void x() {
+  dash();
+  dot();
+  dot();
+  dash();
+}
+void y() {
+  dash();
+  dot();
+  dash();
+  dash();
+}
+void z() {
+  dash();
+  dash();
+  dot();
+  dot();
+}
+void one() {
+  dot();
+  dash();
+  dash();
+  dash();
+  dash();
+}
+void two() {
+  dot();
+  dot();
+  dash();
+  dash();
+  dash();
+}
+void three() {
+  dot();
+  dot();
+  dot();
+  dash();
+  dash();
+}
+void four() {
+  dot();
+  dot();
+  dot();
+  dot();
+  dash();
+}
+void five() {
+  dot();
+  dot();
+  dot();
+  dot();
+  dot();
+}
+void six() {
+  dash();
+  dot();
+  dot();
+  dot();
+  dot();
+}
+void seven() {
+  dash();
+  dash();
+  dot();
+  dot();
+  dot();
+}
+void eight() {
+  dash();
+  dash();
+  dash();
+  dot();
+  dot();
+}
+void nine() {
+  dash();
+  dash();
+  dash();
+  dash();
+  dot();
+}
+void zero() {
+  dash();
+  dash();
+  dash();
+  dash();
+  dash();
+}
+void period() {
+  dot();
+  dash();
+  dot();
+  dash();
+  dot();
+  dot();
+}
+void comma() {
+  dash();
+  dash();
+  dot();
+  dot();
+  dash();
+  dash();
+}
+void qmark() {
+  dot();
+  dot();
+  dash();
+  dash();
+  dot();
+  dot();
+}
+
+void loop(){
+  if(Serial.available()>0)
+  {
+    char letter = Serial.read();
+    
+    if(letter =='a')
+    {
+      a();
+    }
+    else if(letter == 'b')
+    {
+      b();
+    }
+    else if(letter == 'c')
+    {
+      c();
+    }
+    else if(letter == 'd')
+    {
+      d();
+    }
+    else if(letter == 'e')
+    {
+      e();
+    }
+    else if(letter == 'f')
+    {
+      f();
+    }
+    else if(letter == 'g')
+    {
+      g();
+    }
+    else if(letter == 'h')
+    {
+      h();
+    }
+    else if(letter == 'i')
+    {
+      i();
+    }
+    else if(letter == 'j')
+    {
+      j();
+    }
+    else if(letter == 'k')
+    {
+      k();
+    }
+    else if(letter == 'l')
+    {
+      l();
+    }
+    else if(letter == 'm')
+    {
+      m();
+    }
+    else if(letter == 'n')
+    {
+      n();
+    }
+    else if(letter == 'o')
+    {
+      o();
+    }
+    else if(letter == 'p')
+    {
+      p();
+    }
+    else if(letter == 'q')
+    {
+      q();
+    }
+    else if(letter == 'r')
+    {
+      r();
+    }
+    else if(letter == 's')
+    {
+      s();
+    }
+    else if(letter == 't')
+    {
+      t();
+    }
+    else if(letter == 'u')
+    {
+      u();
+    }
+    else if(letter == 'v')
+    {
+      v();
+    }
+    else if(letter == 'w')
+    {
+      w();
+    }
+    else if(letter == 'x')
+    {
+      x();
+    }
+    else if(letter == 'y')
+    {
+      y();
+    }else if(letter == 'z')
+    {
+      z();
+    }else if(letter == 'comma')
+    {
+      comma();
+    }
+    else if(letter == 'period')
+    {
+      period();
+    }
+    else if(letter == 'qmark')
+    {
+      qmark();
+    }
+    else if(letter == 'one')
+    {
+      one();
+    }
+    else if(letter == 'two')
+    {
+      two();
+    }
+    else if(letter == 'three')
+    {
+      three();
+    }
+    else if(letter == 'four')
+    {
+      four();
+    }
+    else if(letter == 'five')
+    {
+      five();
+    }
+    else if(letter == 'six')
+    {
+      six();
+    }
+    else if(letter == 'seven')
+    {
+      seven();
+    }
+    else if(letter == 'eight')
+    {
+      eight();
+    }
+    else if(letter == 'nine')
+    {
+      nine();
+    }
+    else if(letter == 'zero')
+    {
+      zero();
+    }
+   }
+}
